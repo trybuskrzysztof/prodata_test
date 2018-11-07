@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="423a607e-c988-474d-9563-478891d1f1e7" activeEnvironment="Default" name="prodata_test_REST" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="a42cfbf7-e495-41f2-b64c-d22e7e137c78" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://jsonplaceholder.typicode.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint></con:endpoints><con:resource name="Posts" path="/posts" id="915c22d8-afa2-466d-a588-a811ac092a0e"><con:settings/><con:parameters><con:parameter><con:name>value1</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Posts 1" id="76aeae30-faae-43c6-a87f-49514d5fbfd4" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200 201</con:status><con:params/><con:element>Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>500</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="c34e8735-af0d-4eec-abd0-de96bbfbca5a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:originalUri>https://jsonplaceholder.typicode.com/posts</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="value1" value="test" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>value1</con:entry></con:parameterOrder></con:request><con:request name="Request 2" id="afd76142-e041-41f1-b59c-18b618ded7a5" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="posts" path="/posts" id="44697ec1-e251-4872-a815-971aaa323f45"><con:settings/><con:parameters/><con:method name="Method 1" id="95c5cb5b-7937-4f87-adbf-66f02e312f70" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Request 1" id="862f21f7-d15d-4470-b2bb-250c32aed365" mediaType="application/json"><con:settings/><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="b83b849b-e5ad-4c64-9d12-f5031c556b5f" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="53fe0673-9086-439e-85ff-c2b3ad3b950e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="GET" id="dc4b6f71-ca60-4035-a2b9-3095b0e81966"><con:settings/><con:config service="https://jsonplaceholder.typicode.com" methodName="Method 1" resourcePath="/posts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET" id="a25cfc9a-63f6-4c7e-b2e0-5072c40a5e7e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:originalUri>https://jsonplaceholder.typicode.com/posts</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="f6f062d8-af59-400a-b933-31b61df0d9b6" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="value1" value="34" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="titleTransfer" id="e6b8a59f-d46b-495a-90ac-7651a3193f15"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="false" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>title2Properties</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>GET</con:sourceStep><con:sourcePath>$[1].title</con:sourcePath><con:targetType>title</con:targetType><con:targetStep>#TestSuite#</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="groovy" name="assertTitle" id="f366ddec-7a95-4bd8-80af-aa3f2c5935cf"><con:settings/><con:config><script>import static com.jayway.jsonpath.JsonPath.parse
+import net.sf.*
+import net.sf.json.*
+import net.sf.json.groovy.*
+
+String expectedTitle = "qui est esse"
+def actualTitle = testRunner.testCase.testSuite.getPropertyValue("title")
+log.info "Expected title = " + expectedTitle
+log.info "Actual title = " + actualTitle
+assert expectedTitle == actualTitle
+
+if (expectedTitle == actualTitle) {
+	log.info "Test passed"
+} else {
+	log.error "Test failed"
+}
+
+//sprawdzenie ilosci elementow userId i id w Response"
+def response = context.expand( '${GET#Response}' )
+def bodyNode = new JsonSlurper().parseText(response)
+
+def userIdNode = bodyNode.userId
+def userIdNodeSize = userIdNode.size()
+def idNode = bodyNode.id
+def idNodeSize =  idNode.size()
+log.warn "Ilosc elementow userID = " + userIdNodeSize + ", ilosc elementow Id = " + idNodeSize
+
+//sprawdzenie maksymalnej wartosci "userId"
+userIdList = []
+for (i=0; i&lt;userIdNodeSize; i++) {
+	userIdi = bodyNode.userId[i]
+	userIdList.add(userIdi)
+}
+log.info "Pelna lista userId = " + userIdList
+def maxUserId = userIdList.max()
+testRunner.testCase.testSuite.setPropertyValue("maxUserId", maxUserId.toString())
+log.info "Maksymalna wartosc dla userId = " + maxUserId
+
+//sprawdzenie maksymalnej wartosci "Id"
+idList = []
+for (i=0; i&lt;idNodeSize; i++) {
+	idi = bodyNode.id[i]
+	idList.add(idi)
+}
+log.info "Pelna lista id = " + idList
+def maxId = idList.max()
+testRunner.testCase.testSuite.setPropertyValue("maxId", maxId.toString())
+log.info "Maksymalna wartosc dla id = " + maxId
+
+//zwiekszenie userId i Id o 1
+maxUserIdNext = maxUserId + 1
+testRunner.testCase.testSuite.setPropertyValue("maxUserIdNext", maxUserIdNext.toString())
+
+maxIdNext = maxId + 1
+testRunner.testCase.testSuite.setPropertyValue("maxIdNext", maxIdNext.toString())</script></con:config></con:testStep><con:testStep type="restrequest" name="POST" id="a22f5e33-014e-47cf-a1e2-caa81d32f717"><con:settings/><con:config service="https://jsonplaceholder.typicode.com" methodName="Posts 1" resourcePath="/posts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST" id="0fd903b9-e321-4b5d-93f7-3347544360cd" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request>{
+	"userId": "${#TestSuite#maxUserIdNext}",
+	"id": "${#TestSuite#maxIdNext}",
+	"title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+	"body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto"
+}</con:request><con:originalUri>https://jsonplaceholder.typicode.com/posts</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="6adfece1-9e9b-4aa1-8eaf-07648999b5df" name="Valid HTTP Status Codes"><con:configuration><codes>201</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>title</con:name><con:value>qui est esse</con:value></con:property><con:property><con:name>maxUserId</con:name><con:value>10</con:value></con:property><con:property><con:name>maxId</con:name><con:value>100</con:value></con:property><con:property><con:name>maxUserIdNext</con:name><con:value>11</con:value></con:property><con:property><con:name>maxIdNext</con:name><con:value>101</con:value></con:property></con:properties></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
